@@ -53,17 +53,17 @@ export default function Experience() {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-gray-50">
+    <section id="experience" className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Experience & Education</h2>
+          <h2 className="text-4xl font-bold text-gray-100 mb-4">Experience & Education</h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
-          <p className="text-gray-600 mt-4">My journey in tech so far</p>
+          <p className="text-gray-400 mt-4">My journey in tech so far</p>
         </div>
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-200"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-700"></div>
 
           {experiences.map((exp, index) => (
             <div
@@ -73,28 +73,28 @@ export default function Experience() {
               }`}
             >
               <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:ml-auto' : ''}`}>
-                <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl hover:shadow-blue-600/10 transition-all border border-gray-700">
                   <div className="flex items-center mb-4">
                     <div
                       className={`p-3 rounded-full ${
                         exp.type === 'work' 
-                          ? 'bg-blue-100 text-blue-600' 
-                          : 'bg-green-100 text-green-600'
+                          ? 'bg-blue-900/50 text-blue-400' 
+                          : 'bg-green-900/50 text-green-400'
                       }`}
                     >
                       {exp.type === 'work' ? <Briefcase size={24} /> : <GraduationCap size={24} />}
                     </div>
                     <div className="ml-4">
-                      <h3 className="text-xl font-bold text-gray-900">{exp.title}</h3>
-                      <p className="text-blue-600 font-medium">{exp.organization}</p>
+                      <h3 className="text-xl font-bold text-gray-100">{exp.title}</h3>
+                      <p className="text-blue-400 font-medium">{exp.organization}</p>
                     </div>
                   </div>
                   <p className="text-sm text-gray-500 mb-3">{exp.period}</p>
-                  <p className="text-gray-600 mb-4">{exp.description}</p>
+                  <p className="text-gray-300 mb-4">{exp.description}</p>
                   <ul className="space-y-2">
                     {exp.achievements.map((achievement, achIndex) => (
-                      <li key={achIndex} className="text-gray-600 flex items-start">
-                        <span className="text-blue-600 mr-2 font-bold">•</span>
+                      <li key={achIndex} className="text-gray-300 flex items-start">
+                        <span className="text-blue-400 mr-2 font-bold">•</span>
                         {achievement}
                       </li>
                     ))}
@@ -104,7 +104,7 @@ export default function Experience() {
 
               {/* Timeline dot */}
               <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-8">
-                <div className="w-4 h-4 bg-blue-600 rounded-full border-4 border-white"></div>
+                <div className="w-4 h-4 bg-blue-600 rounded-full border-4 border-gray-900"></div>
               </div>
             </div>
           ))}

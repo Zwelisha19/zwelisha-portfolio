@@ -1,5 +1,5 @@
 import { Code2, Lightbulb, Users, Rocket } from 'lucide-react';
-import profileImage from '../assets/images/zwelisha.jpeg'; // ✅ Correct path now!
+import profileImage from '../assets/images/zwelisha.jpeg';
 
 export default function About() {
   const highlights = [
@@ -26,10 +26,10 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
+          <h2 className="text-4xl font-bold text-gray-100 mb-4">About Me</h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
         </div>
 
@@ -38,14 +38,14 @@ export default function About() {
             <img
               src={profileImage}
               alt="Thabang Zwelisha Siwela"
-              className="rounded-lg shadow-xl w-full max-w-md h-auto object-cover mx-auto"
+              className="rounded-lg shadow-xl w-full max-w-md h-auto object-cover mx-auto border-4 border-gray-700"
             />
           </div>
           <div>
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">
+            <h3 className="text-3xl font-bold text-gray-100 mb-6">
               Mobile and Web Developer
             </h3>
-            <div className="space-y-4 text-gray-600 leading-relaxed">
+            <div className="space-y-4 text-gray-300 leading-relaxed">
               <p>
                 I'm a motivated software development intern with experience in building full-stack 
                 applications. I recently completed my National Diploma in IT at Tshwane University of Technology 
@@ -69,11 +69,11 @@ export default function About() {
           {highlights.map((item, index) => (
             <div
               key={index}
-              className="p-6 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg hover:shadow-lg transition-all hover:scale-105"
+              className="p-6 bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg hover:shadow-xl hover:shadow-blue-600/10 transition-all hover:scale-105 border border-gray-700"
             >
-              <div className="text-blue-600 mb-4">{item.icon}</div>
-              <h4 className="text-xl font-semibold text-gray-900 mb-2">{item.title}</h4>
-              <p className="text-gray-600">{item.description}</p>
+              <div className="text-blue-400 mb-4">{item.icon}</div>
+              <h4 className="text-xl font-semibold text-gray-100 mb-2">{item.title}</h4>
+              <p className="text-gray-300">{item.description}</p>
             </div>
           ))}
         </div>
