@@ -4,50 +4,50 @@ export default function Experience() {
   const experiences = [
     {
       type: 'work',
-      title: 'Senior Frontend Developer',
-      organization: 'TechCorp Inc.',
-      period: '2022 - Present',
-      description: 'Leading the frontend development team, architecting scalable React applications, and mentoring junior developers.',
+      title: 'Software Developer Intern',
+      organization: 'Moepi Publishing',
+      period: 'May 2025 – Present',
+      description: 'Currently gaining hands-on experience in software development through work-integrated learning.',
       achievements: [
-        'Improved application performance by 40%',
-        'Led migration to TypeScript',
-        'Implemented CI/CD pipeline',
+        'Working on full-stack development projects',
+        'Collaborating with development team on real-world applications',
+        'Applying React, Node.js, and other modern technologies',
+        'Learning industry best practices and development workflows',
       ],
     },
+   {
+  type: 'work',
+  title: 'Mobile and App Developer Intern (Work-Integrated Learning)',
+  organization: 'Codetribe',
+  period: 'July 2024 – March 2025',
+  description: 'Work-integrated learning placement as part of TUT National Diploma program.',
+  achievements: [
+    'Developed mobile applications using React, React Native, and Node.js',
+    'Debugged and optimized apps for performance and user experience',
+    'Managed code with Git and contributed to collaborative projects',
+    'Documented technical specifications and user guides for future development',
+  ],
+},
     {
-      type: 'work',
-      title: 'Full Stack Developer',
-      organization: 'StartupXYZ',
-      period: '2020 - 2022',
-      description: 'Developed and maintained multiple client projects using React, Node.js, and various databases.',
+      type: 'education',
+      title: 'National Diploma in Information Technology',
+      organization: 'Tshwane University of Technology',
+      period: 'Feb 2018 – March 2025',
+      description: 'Completed comprehensive IT education with focus on software development.',
       achievements: [
-        'Built 5+ production applications',
-        'Reduced API response time by 60%',
-        'Introduced testing culture',
-      ],
-    },
-    {
-      type: 'work',
-      title: 'Junior Developer',
-      organization: 'WebSolutions Co.',
-      period: '2019 - 2020',
-      description: 'Started career building responsive websites and learning modern web development practices.',
-      achievements: [
-        'Developed 10+ client websites',
-        'Learned React and modern JavaScript',
-        'Collaborated in agile teams',
+        'Relevant Courses: Software Development',
+        'Built full-stack applications as part of coursework',
+        'Graduated with practical experience in modern web technologies',
       ],
     },
     {
       type: 'education',
-      title: 'Bachelor of Computer Science',
-      organization: 'University of Technology',
-      period: '2015 - 2019',
-      description: 'Graduated with honors, focusing on software engineering and web technologies.',
+      title: 'Matric / High School',
+      organization: 'Ngaka Maseko Secondary School',
+      period: '2014 – 2016',
+      description: 'Completed secondary education.',
       achievements: [
-        'GPA: 3.8/4.0',
-        'Dean\'s List',
-        'Led student tech club',
+        'National Senior Certificate (Matric)',
       ],
     },
   ];
@@ -58,9 +58,11 @@ export default function Experience() {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Experience & Education</h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
+          <p className="text-gray-600 mt-4">My journey in tech so far</p>
         </div>
 
         <div className="relative">
+          {/* Timeline line */}
           <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-200"></div>
 
           {experiences.map((exp, index) => (
@@ -74,8 +76,10 @@ export default function Experience() {
                 <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
                   <div className="flex items-center mb-4">
                     <div
-                      className={`p-2 rounded-full ${
-                        exp.type === 'work' ? 'bg-blue-100 text-blue-600' : 'bg-green-100 text-green-600'
+                      className={`p-3 rounded-full ${
+                        exp.type === 'work' 
+                          ? 'bg-blue-100 text-blue-600' 
+                          : 'bg-green-100 text-green-600'
                       }`}
                     >
                       {exp.type === 'work' ? <Briefcase size={24} /> : <GraduationCap size={24} />}
@@ -90,7 +94,7 @@ export default function Experience() {
                   <ul className="space-y-2">
                     {exp.achievements.map((achievement, achIndex) => (
                       <li key={achIndex} className="text-gray-600 flex items-start">
-                        <span className="text-blue-600 mr-2">•</span>
+                        <span className="text-blue-600 mr-2 font-bold">•</span>
                         {achievement}
                       </li>
                     ))}
@@ -98,6 +102,7 @@ export default function Experience() {
                 </div>
               </div>
 
+              {/* Timeline dot */}
               <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-8">
                 <div className="w-4 h-4 bg-blue-600 rounded-full border-4 border-white"></div>
               </div>
