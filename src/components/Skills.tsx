@@ -3,31 +3,31 @@ export default function Skills() {
     {
       category: 'Frontend',
       skills: [
-        { name: 'React', level: 95 },
-        { name: 'TypeScript', level: 90 },
-        { name: 'Next.js', level: 85 },
-        { name: 'Tailwind CSS', level: 90 },
-        { name: 'Vue.js', level: 75 },
+        { name: 'React.js' },
+        { name: 'React Native' },
+        { name: 'JavaScript' },
+        { name: 'HTML/CSS' },
+        { name: 'Responsive Design' },
       ],
     },
     {
       category: 'Backend',
       skills: [
-        { name: 'Node.js', level: 90 },
-        { name: 'Python', level: 80 },
-        { name: 'PostgreSQL', level: 85 },
-        { name: 'MongoDB', level: 80 },
-        { name: 'GraphQL', level: 75 },
+        { name: 'Node.js' },
+        { name: 'Express' },
+        { name: 'MongoDB' },
+        { name: 'Firebase' },
+        { name: 'REST APIs' },
       ],
     },
     {
       category: 'Tools & Others',
       skills: [
-        { name: 'Git', level: 95 },
-        { name: 'Docker', level: 85 },
-        { name: 'AWS', level: 80 },
-        { name: 'CI/CD', level: 85 },
-        { name: 'Testing', level: 90 },
+        { name: 'Git' },
+        { name: 'GitHub' },
+        { name: 'VS Code' },
+        { name: 'Postman' },
+        { name: 'Debugging' },
       ],
     },
   ];
@@ -38,26 +38,25 @@ export default function Skills() {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Skills & Technologies</h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
+          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+            Technologies and tools I work with to build full-stack applications
+          </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => (
-            <div key={index} className="bg-white p-8 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">{category.category}</h3>
-              <div className="space-y-4">
+            <div key={index} className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 border-b pb-2 border-blue-100">
+                {category.category}
+              </h3>
+              <div className="flex flex-wrap gap-3">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex}>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-gray-700 font-medium">{skill.name}</span>
-                      <span className="text-gray-500">{skill.level}%</span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div
-                        className="bg-gradient-to-r from-blue-600 to-cyan-600 h-2 rounded-full transition-all duration-1000"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
-                  </div>
+                  <span
+                    key={skillIndex}
+                    className="px-4 py-2 bg-gradient-to-r from-blue-50 to-cyan-50 text-gray-700 rounded-full text-sm font-medium border border-blue-100 hover:scale-105 transition-transform cursor-default"
+                  >
+                    {skill.name}
+                  </span>
                 ))}
               </div>
             </div>
